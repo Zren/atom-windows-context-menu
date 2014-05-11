@@ -2,7 +2,7 @@
   "name": "windows-context-menu",
   "main": "./lib/windows-context-menu",
   "version": "0.2.0",
-  "description": "Adds Windows registry keys for misc operations with Atom.",
+  "description": "Adds 'Open in Atom' to files and folders in Windows Explorer.",
   "repository": "https://github.com/Zren/atom-windows-context-menu",
   "license": "MIT",
   "engines": {
