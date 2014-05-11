@@ -11,6 +11,12 @@ module.exports =
     if error
       console.log(error)
 
+  lastLaunchPath: () ->
+    atom.config.get('windows-context-menu.lastLaunchPath', '')
+
+  launchPathHasChanged: () ->
+    return @launchPath != @lastLaunchPath()
+
   applyRegKey: (hive, key, name, value) ->
     regKey = new WinReg({
       hive: hive
@@ -64,11 +70,14 @@ module.exports =
   install: () ->
     @installOpenFileContextMenu()
     @installOpenFolderContextMenu()
+    atom.config.set('windows-context-menu.lastLaunchPath', @launchPath)
 
   uninstall: () ->
-    @uninstallOpenFileContextMenu() 
+    @uninstallOpenFileContextMenu()
     @uninstallOpenFolderContextMenu()
 
+  disable: () ->
+    @uninstall()
 
 
   ###
@@ -76,8 +85,9 @@ module.exports =
   ###
 
   activate: (state) ->
-    @install() # Launcher may have been moved, breaking stuff.
-    
+    if @launchPathHasChanged()
+      @install()
+
   deactivate: ->
     if atom.packages.isPackageDisabled('windows-context-menu')
-      @uninstall()
+      @disable()

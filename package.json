@@ -1,7 +1,7 @@
 {
   "name": "windows-context-menu",
   "main": "./lib/windows-context-menu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adds Windows registry keys for misc operations with Atom.",
   "repository": "https://github.com/Zren/atom-windows-context-menu",
   "license": "MIT",
