@@ -1,0 +1,36 @@
+Windows Registry Editor Version 5.00
+
+; Adds 'Open in Atom' to context menu (when you right click) in Windows Explorer.
+; Based on https://gist.github.com/kyle-ilantzis/c5a30fbabe8923130581
+
+; * => Open File
+[HKEY_CLASSES_ROOT\*\shell\Open File in Atom]
+""="Open File in Atom"
+"Icon"="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\Open File in Atom\command]
+""="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe \"%1\""
+ 
+; Directory Selected => Open Folder
+[HKEY_CLASSES_ROOT\Directory\shell\Open Folder in Atom]
+""="Open Folder in Atom"
+"Icon"="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe"
+ 
+[HKEY_CLASSES_ROOT\Directory\shell\Open Folder in Atom\command]
+""="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe \"%1\""
+ 
+; Directory Background Selected: Open Folder
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Open Folder in Atom]
+""="Open Folder in Atom"
+"Icon"="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe"
+ 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Open Folder in Atom\command]
+""="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe \"%V\""
+ 
+; Directory Background Selected (Within Library): Open Folder
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\Open Folder in Atom]
+""="Open Folder in Atom"
+"Icon"="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe"
+ 
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\Open Folder in Atom\command]
+""="C:\\Chocolatey\\lib\\Atom.0.115.0\\tools\\Atom\\atom.exe \"%V\""

@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; Removes 'Open in Atom' from the context menu.
+
+; windows-context-menu
+[-HKEY_CLASSES_ROOT\*\shell\Open File in Atom]
+[-HKEY_CLASSES_ROOT\Directory\shell\Open Folder in Atom]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\Open Folder in Atom]
+[-HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\Open Folder in Atom]
+
+; Chocolatey
+[-HKEY_CLASSES_ROOT\*\shell\Atom]
