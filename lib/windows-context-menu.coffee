@@ -40,6 +40,8 @@ module.exports =
   uninstallOpenFileContextMenu: () ->
     @deleteRegKey(WinReg.HKCR, '\\*\\shell\\' + @openFileContextMenuText)
 
+  uninstallChocolateyContextMenu: () ->
+    @deleteRegKey(WinReg.HKCR, '\\*\\shell\\Atom')
 
   installOpenFolderContextMenu: () ->
     # Directory Selected => Open Folder
@@ -57,7 +59,6 @@ module.exports =
     @applyRegKey(WinReg.HKCR, '\\LibraryFolder\\Background\\shell\\' + @openFolderContextMenuText, 'Icon', @launchPath)
     @applyRegKey(WinReg.HKCR, '\\LibraryFolder\\Background\\shell\\' + @openFolderContextMenuText + '\\command', '', @launchPath + ' "%V"')
 
-
   uninstallOpenFolderContextMenu: () ->
     # @deleteRegKey(WinReg.HKCR, '\\LibraryFolder\\Background\\shell\\' + @openFolderContextMenuText + '\\command')
     @deleteRegKey(WinReg.HKCR, '\\LibraryFolder\\Background\\shell\\' + @openFolderContextMenuText)
@@ -68,6 +69,7 @@ module.exports =
 
 
   install: () ->
+    @uninstallChocolateyContextMenu()
     @installOpenFileContextMenu()
     @installOpenFolderContextMenu()
     atom.config.set('windows-context-menu.lastLaunchPath', @launchPath)

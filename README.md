@@ -1,9 +1,9 @@
-Windows Explorer Context Menues
-===============================
+Windows Explorer Context Menu
+=============================
 
 Modifies the Windows registry to add options to the explorer context menues.
 
-Disable the package before uninstalling. There is currently no indication that a package is about to be uninstalled. You can also uninstall using the included `uninstall.reg` [here](https://github.com/Zren/atom-windows-context-menu/assets/uninstall.reg)
+Disable the package before uninstalling. There is currently no indication that a package is about to be uninstalled. You can also uninstall using the included `uninstall.reg` [here](https://github.com/Zren/atom-windows-context-menu/assets/uninstall.reg).
 
 ![File Context Menu](http://i.imgur.com/3iRCt7m.png)
 
