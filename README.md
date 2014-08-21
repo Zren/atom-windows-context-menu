@@ -14,5 +14,11 @@ Alternatives
 
 Installing through registry files:
 
+Use either of these as a template.
+
 * For `C:\Atom\atom.exe`: https://gist.github.com/kyle-ilantzis/c5a30fbabe8923130581
-* For `C:\Chocolatey\lib\Atom.0.115.0\tools\Atom\atom.exe`: https://github.com/Zren/atom-windows-context-menu/blob/master/assets/install_0.115.0_chocolatey.reg
+* For `C:\Chocolatey\lib\Atom.0.115.0\tools\Atom\atom.exe`: https://github.com/Zren/atom-windows-context-menu/blob/master/assets/install_template.reg
+
+Installing through powershell:
+
+* For Chocolatey installs: Download [this project](https://github.com/Zren/atom-windows-context-menu/archive/master.zip) and run `assets/install_chocolatey.ps1`.
