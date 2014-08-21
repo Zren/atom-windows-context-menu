@@ -19,7 +19,7 @@ try {
 }
 
 
-$atomDir = (Get-ChildItem $chocolateyDir\lib\atom* | select $_.last)
+$atomDir = (Get-ChildItem $chocolateyDir\lib\atom* | select -last 1)
 $atomExe = "$atomDir\tools\Atom\atom.exe"
 $atomIcon = $atomExe
 Install-ExplorerMenuItem "Open File in Atom" "Open File in Atom" $atomExe $atomIcon

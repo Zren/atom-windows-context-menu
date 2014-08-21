@@ -67,9 +67,9 @@ param(
       $elevated += @"
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey')) { New-Item -Path '$registryKeyPath\$menuKey' };
         Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$menuLabel';
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '$icon';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '\`"$icon\`"';
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey\command')) { New-Item -Path '$registryKeyPath\$menuKey\command' };
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$command \`"%1\`"';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey\command' -Name '(Default)'  -Value '\`"$command\`" \`"%1\`"';
 "@
     } elseif ($type -eq "directory") {
       # Directory Selected => Open Folder
@@ -77,9 +77,9 @@ param(
       $elevated += @"
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey')) { New-Item -Path '$registryKeyPath\$menuKey' };
         Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$menuLabel';
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '$icon';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '\`"$icon\`"';
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey\command')) { New-Item -Path '$registryKeyPath\$menuKey\command' };
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$command \`"%1\`"';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey\command' -Name '(Default)'  -Value '\`"$command\`" \`"%1\`"';
 "@
 
       # Directory Background Selected: Open Folder
@@ -87,9 +87,9 @@ param(
       $elevated += @"
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey')) { New-Item -Path '$registryKeyPath\$menuKey' };
         Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$menuLabel';
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '$icon';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '\`"$icon\`"';
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey\command')) { New-Item -Path '$registryKeyPath\$menuKey\command' };
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$command \`"%1\`"';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey\command' -Name '(Default)'  -Value '\`"$command\`" \`"%V\`"';
 "@
 
       # Directory Background Selected (Within Library): Open Folder
@@ -97,9 +97,9 @@ param(
       $elevated += @"
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey')) { New-Item -Path '$registryKeyPath\$menuKey' };
         Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$menuLabel';
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '$icon';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name 'Icon'  -Value '\`"$icon\`"';
         if(!(Test-Path -LiteralPath '$registryKeyPath\$menuKey\command')) { New-Item -Path '$registryKeyPath\$menuKey\command' };
-        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey' -Name '(Default)'  -Value '$command \`"%1\`"';
+        Set-ItemProperty -LiteralPath '$registryKeyPath\$menuKey\command' -Name '(Default)'  -Value '\`"$command\`" \`"%V\`"';
 "@
     } else {
       return 1
