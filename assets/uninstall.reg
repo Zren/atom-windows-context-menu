@@ -10,3 +10,5 @@ Windows Registry Editor Version 5.00
 
 ; Chocolatey
 [-HKEY_CLASSES_ROOT\*\shell\Atom]
+[-HKEY_CLASSES_ROOT\Directory\shell\Atom]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\Atom]
