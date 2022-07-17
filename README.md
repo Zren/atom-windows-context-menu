@@ -9,6 +9,15 @@ Disable the package before uninstalling. There is currently no indication that a
 
 ![Directory Background Context Menu](http://i.imgur.com/9v0UZKo.png)
 
+Troubleshooting
+------------
+##### The context menú doesn't show.
+You have to enable the context menu settings in System. Here are the steps:
+
+Open File > Settings.
+Click on the System tab.
+Enable check mark: Show in folder context menus
+
 Alternatives
 ------------
 
